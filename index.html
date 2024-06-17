@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to external JavaScript file -->
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="nav-bar">
+        <!-- Logo image -->
+        <img src="logo.png" alt="Logo">
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Find Your Movie</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <!-- Main title -->
+    <div class="main-title">
+        <h1>Browse Our Movies</h1>
+    </div>
+    <!-- Search container -->
+    <div class="search-container">
+        <!-- Search input field -->
+        <input type="text" id="movieTitle" class="search-bar" placeholder="Enter movie title...">
+        <!-- Search button -->
+        <button class="search-button" onclick="searchMovie()">Search</button>
+        <!-- Filter dropdown -->
+        <select id="filter" class="filter" onchange="applyFilter()">
+            <option value="none">Sort Alphabetically</option>
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
+    </div>
+    <!-- Result container -->
+    <div class="result-container" id="resultContainer">
+        <!-- Movie grid to display movie cards -->
+        <div class="movie-grid" id="movieGrid">
+            <!-- Movie cards will be dynamically inserted here -->
+        </div>
+    </div>
+</body>
+</html>
