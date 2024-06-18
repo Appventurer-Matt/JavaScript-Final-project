@@ -59,15 +59,14 @@ function displayMovies(movies) {
     });
 }
 
-// Function to apply sorting filter
-function applyFilter() {
-    const filterValue = document.getElementById('filter').value;
+// Function to apply slider filter
+function applySliderFilter() {
+    const slider = document.getElementById('alphabetSlider');
+    const sliderValueDisplay = document.getElementById('sliderValue');
+    const sliderValue = String.fromCharCode(slider.value);
 
-    if (filterValue === 'asc') {
-        moviesData.sort((a, b) => a.Title.localeCompare(b.Title));
-    } else if (filterValue === 'desc') {
-        moviesData.sort((a, b) => b.Title.localeCompare(a.Title));
-    }
+    sliderValueDisplay.textContent = sliderValue;
 
-    displayMovies(moviesData);
+    const filteredMovies = moviesData.filter(movie => movie.Title.startsWith(sliderValue));
+    displayMovies(filteredMovies);
 }

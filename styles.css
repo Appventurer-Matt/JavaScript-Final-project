@@ -1,9 +1,9 @@
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f0f0f5;
     color: #333;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 .nav-bar img {
-    height: 40px;
+    height: 50px;
 }
 
 .nav-links {
@@ -30,12 +30,34 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1em;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61dafb;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Main title styles */
 .main-title {
     text-align: center;
     margin-top: 40px;
+}
+
+.main-title h1 {
+    font-size: 2em;
+    color: #282c34;
 }
 
 /* Search container styles */
@@ -51,7 +73,7 @@ body {
     font-size: 1em;
     border: 2px solid #ddd;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-button {
@@ -63,20 +85,27 @@ body {
     color: white;
     cursor: pointer;
     margin-left: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-button:hover {
     background-color: #21a1f1;
 }
 
-.filter {
-    margin-left: 20px;
-    font-size: 1em;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+.slider-container {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.slider {
+    width: 200px;
+}
+
+#sliderValue {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 /* Result container and movie grid styles */
@@ -90,6 +119,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .movie-card {
@@ -98,7 +129,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 150px;
+    width: 30%;
+    box-sizing: border-box;
 }
 
 .movie-card img {
@@ -109,5 +141,9 @@ body {
 .movie-card h3 {
     margin-top: 10px;
     font-size: 1em;
+    color: #333;
 }
 
+.movie-card p {
+    color: #666;
+}

@@ -31,12 +31,12 @@
         <input type="text" id="movieTitle" class="search-bar" placeholder="Enter movie title...">
         <!-- Search button -->
         <button class="search-button" onclick="searchMovie()">Search</button>
-        <!-- Filter dropdown -->
-        <select id="filter" class="filter" onchange="applyFilter()">
-            <option value="none">Sort Alphabetically</option>
-            <option value="asc">A-Z</option>
-            <option value="desc">Z-A</option>
-        </select>
+        <!-- Alphabetical filter slider -->
+        <div class="slider-container">
+            <label for="alphabetSlider">Filter Alphabetically:</label>
+            <input type="range" id="alphabetSlider" class="slider" min="65" max="90" value="65" oninput="applySliderFilter()">
+            <span id="sliderValue">A</span>
+        </div>
     </div>
     <!-- Result container -->
     <div class="result-container" id="resultContainer">
